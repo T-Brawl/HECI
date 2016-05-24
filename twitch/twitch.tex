@@ -1,14 +1,15 @@
 \documentclass[a4paper]{article}
 
 \usepackage[francais]{babel}
-\usepackage{amsmath}
-\usepackage{graphicx}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
 \usepackage{fontspec}
-\usepackage{listings}
-\usepackage{moreverb}
-\usepackage{color}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage[labelformat=empty]{caption}
+%\usepackage{listings}
+%\usepackage{moreverb}
+%\usepackage{color}
+\usepackage{cprotect}
+%\usepackage[colorinlistoftodos]{todonotes}
+%\usepackage[labelformat=empty]{caption}
 \usepackage[textheight=25cm]{geometry}
 \usepackage{hyperref}
 
@@ -25,28 +26,20 @@
 \begin{document}
 \maketitle
 
-%\begin{abstract}
-%25 août 2014. Twitch annonce son rachat par Amazon pour un peu moins d'un milliard de dollars. Créée en 2011, cette start-up spécialisée dans le streaming en direct est devenu en trois ans l'un des gros consommateurs de bande passante devant Facebook, Valve ou...Amazon.
-
-%Cette \textit{success story} fait ou a dû faire face à certains problèmes techniques et légaux.
-%\end{abstract}
-
-%
-% https://www.reddit.com/r/Twitch/comments/3yu2sv/why_is_fire_eater64_in_every_stream/
-%
-
-\section{La \textit{success story} Twitch}
+\section{Twitch, acteur majeur du \textit{live streaming}}
 \subsection{Qu'est-ce que le \textit{live streaming} ?}
-Avant tout chose, une introduction (ou un rappel) de ce qu'est le \textit{live streaming} me semble nécessaire. Son principe est le suivant.
+Avant tout chose, une introduction (ou un rappel) de ce qu'est le \textit{live streaming} ainsi que de son vocabulaire me semble nécessaire. La plupart de ce vocabulaire est en anglais et, même s'il existe des traductions françaises plus ou moins officielles, ma préférence va aux termes anglophones (question d'habitude).
 
-Un utilisateur possédant une webcam, un smartphone ou tout matériel de capture (par exemple, un boîtier d'acquisition pour les consoles de jeux vidéo) diffuse du contenu vidéo en ligne et en direct. On dit alors qu'il est le \textit{broadcaster} ou le \textit{streamer}. 
+Un utilisateur diffuse du contenu en ligne et en direct (ou en léger différé) à partir de son ordinateur ou de son smartphone. On dit alors qu'il est le \textit{broadcaster}, le \textit{caster} ou le \textit{streamer}. Pour ce faire, il va utiliser des logiciels de streaming afin de configurer l'envoi du flux (débit binaire du flux, résolution de la vidéo, volume sonore\ldots).
 
-Le principal intérêt du live streaming est que les autres utilisateurs, les \textit{viewers} ou spectateurs, regardent le contenu en direct sur la plate-forme et peuvent interagir avec le streamer à travers un chat. Généralement, chaque plate-forme propose un ensemble d'\textit{emotes}, qui représentent différentes émotions. 
+Le principal intérêt du live streaming est que les autres utilisateurs, les \textit{viewers} ou spectateurs, regardent le contenu en direct sur la plate-forme et peuvent interagir avec le streamer à travers un chat. Généralement, chaque plate-forme propose un ensemble d'émoticônes, qui représentent différentes émotions. De base, il y a pléthore d'émoticônes disponibles sur Twitch mais pour les plus bavards, des plugins avec encore plus d'émoticônes existent\footnote{On peut consulter les liens \href{https://twitchemotes.com/}{\texttt{twitchemotes.com}} (liste exhaustive des émoticônes officielles de Twitch) et \href{https://nightdev.com/betterttv/faces.php}{\texttt{nightdev.com/betterttv/faces.php}} (liste des émoticônes de l'extension Better Twitch TV).}.
 
-\subsection{Histoire de Twitch}
-Si le site twitch.tv n'est lancé qu'en juin 2011, son histoire commence quatre ans plutôt. En 2007, Justin Kan et Emmett Shear lancent la plateforme de \textit{live streaming} justin.tv (site et application mobile). Justin était divisé en plusieurs catégories, chaque catégorie étant un type de diffusion en direct (sports, arts, animaux, actualités...). Une d'entre elles se distingue particulièrement, la section jeux vidéo \textit{Gaming}.
+Streamer ou viewer, les utilisateurs doivent d'abord créer un compte sur la plate-forme et ils sont identifiés par leur pseudonyme. Par plate-forme, on entend le site web et l'application sur les différents supports. Dans le cas de Twitch, une application est disponible sur smartphones et tablettes. Twitch est également disponible sur les consoles \textit{Xbox One} et \textit{PlayStation 4}. Il est possible de directement diffuser à partir de ces consoles, sans configuration spéciale nécessaire.
 
-Très vite, les joueurs et les entreprises du marché vidéoludique utilisent la plate-forme pour la diffusion de \textit{playthroughs}\footnote{Un playthrough est une vidéo produite par un joueur qui montre le déroulement d'un jeu en entier ou en partie.} et de compétitions \textit{e-sport}\footnote{À cette époque, les tournois internationaux de \textit{StarCraft} et \textit{Counter-Strike} étaient déjà dotés de plusieurs dizaines de milliers d'euros.}. Le succès de la section Gaming est tel que les dirigeants de justin.tv ont décidé en 2011 de séparer cette section du reste du site pour donner naissance à Twitch.
+\subsection{La \textit{success story} Twitch}
+Si le site twitch.tv n'est lancé qu'en juin 2011, son histoire commence quatre ans plutôt. En 2007, Justin Kan, Emmett Shear, Michael Seibel et Kyle Vogt lancent la plateforme de live streaming justin.tv (site et application mobile). Justin était divisé en plusieurs catégories (ou sections), chaque catégorie étant un type de diffusion en direct. On pouvait voir une épreuve de jet-ski dans la catégorie \textit{Sports}, le quotidien de hamsters dans la section \textit{Animals} ou un artiste amateur peindre une œuvre du début jusqu'à la fin dans \textbf{Arts}. Mais la catégorie qui se distingue particulièrement est la section jeux vidéo (\textit{Gaming}).
+
+Très vite, les joueurs et les entreprises du marché vidéoludique utilisent la plate-forme Justin pour la diffusion de \textit{playthroughs}\footnote{Un playthrough est une vidéo produite par un joueur qui montre le déroulement d'un jeu en entier ou en partie.} et de compétitions \textit{e-sport}\footnote{À cette époque, les tournois internationaux de \textit{StarCraft} et \textit{Counter-Strike} étaient déjà dotés de plusieurs dizaines de milliers d'euros. L'enjeu pour les joueurs professionnels était déjà conséquent\ldots}. Le succès de la section Gaming est tel que les dirigeants de justin.tv ont décidé en 2011 de séparer cette section du reste du site et d'en faire une plate-forme à part entière. C'est l'acte de naissance à Twitch.
 
 Twitch continue sa croissance florissante et domine largement le marché du live streaming de jeux vidéo, loin devant ses concurrents directs Hitbox et Azubu. En février 2014, Twitch est le quatrième consommateur de bande passante aux États-Unis pendant les heures de pointe, devant Facebook, Amazon ou Valve.
 
@@ -56,11 +49,11 @@ Les chiffres de l'année 2015 donnent le vertige. En moyenne sur l'année, 55000
 
 Des chiffres qui ont attiré des mastodontes du web, Amazon et Google. Après plusieurs mois de tractations avec le géant de Mountain View, c'est finalement Amazon qui rachète Twitch fin août 2014 pour un peu moins d'un milliard d'euros. Google riposte et crée \textit{Youtube Gaming}, un concurrent crédible à la place de leader du marché.
 
-Quant à Justin, le site a été fermé en août 2014 afin de se concentrer sur Twitch. Twitch qui se revendiquait comme une plateforme 100\% jeu vidéo a lancé en octobre 2015 une section qui permet aux utilisateurs de diffuser du contenu créatif (peinture, musique, cuisine ou même de la programmation)...comme le faisait son prédécesseur Justin. 
+Quant à Justin, le site a été fermé en août 2014 afin de se concentrer sur Twitch. Twitch qui se revendiquait comme une plateforme 100\% jeu vidéo a lancé en octobre 2015 une section qui permet aux utilisateurs de diffuser du contenu créatif (peinture, musique, cuisine ou même de la programmation)\ldots comme le faisait son prédécesseur Justin. 
 
 \section{Le \textit{viewbotting}}
 
-\subsection{Pourquoi le \textit{viewbotting} ?}
+\subsection{Pourquoi et comment simuler la présence de spectateurs ?}
 
 Le succès de Twitch et des plus gros \textit{streamers} sur cette plateforme ont motivé des millions de personnes à se lancer dans l'aventure du \textit{live streaming}. Vue la forte concurrence sur Twitch, certaines d'entre elles sont prêtes à tout pour obtenir la popularité et la richesse, quitte à utiliser des moyens frauduleux (et pas du tout fair-play).
 
@@ -68,19 +61,24 @@ Dès qu'un stream sur Twitch démarre, on peut observer en bas du flux vidéo, l
 
 %Capture d'écran
 
-Le jeu est donc de gonfler le nombre de spectateurs afin d'apparaître au sommet de l'affiche et d'attirer de nouveaux spectateurs par effet boule de neige (plus de gens regardent un stream, plus ce stream a de chances d'attirer de nouvelles personnes). L'enjeu est également financier puisque les plus gros streamers signent un contrat avec Twitch pour se partager les revenus générés par la chaîne (abonnements\footnote{Un utilisateur peut s'abonner à un streamer pour 5 dollars par mois. Ces cinq dollars sont partagés entre le streamer et Twitch (50-50). Les streamers les plus populaires ont plus de 1500 abonnés, ce qui fait un revenu mensuel de 3750 dollars...}, dons des spectateurs\footnote{Encore une fois, pour les streamers les plus en vue, c'est le jackpot. Le Suédois Sebastian « Forsen » Fors peut toucher plus de 18000 dollars de dons en un mois.}, publicité...).
+Le jeu est donc de gonfler le nombre de spectateurs afin d'apparaître au sommet de l'affiche et d'attirer de nouveaux spectateurs par effet boule de neige (plus de gens regardent un stream, plus ce stream a de chances d'attirer de nouvelles personnes). L'enjeu est également financier puisque les plus gros streamers signent un contrat avec Twitch pour se partager les revenus générés par la chaîne (abonnements\footnote{Un utilisateur peut s'abonner à un streamer pour 5 dollars par mois. Ces cinq dollars sont partagés entre le streamer et Twitch (moitié-moitié). Les streamers les plus populaires ont plus de 1500 abonnés, ce qui fait un revenu mensuel de 3750 dollars\ldots}, dons des spectateurs\footnote{Encore une fois, pour les streamers les plus en vue, c'est le jackpot. Le Suédois Sebastian « \href{https://www.twitch.tv/forsenlol}{Forsen} » Fors peut toucher plus de 18000 dollars de dons en un mois.}, publicité\footnote{Les streamers sous contrat avec Twitch peuvent diffuser des publicités sur le stream. Là encore, les revenus venant de ces publicités sont partagés entre le broadcaster et Twitch. Pour plus de détails, voir \href{https://blog.twitch.tv/updates-to-twitch-commercial-policy-a35f5ce89afa}{\textit{Updates to Twitch Commercial Policy}}}.).
 
-\subsection{Les \textit{viewbotters} contre Twitch}
+Commencer à booster sa chaîne avec des viewbots est facile. Une recherche sur votre moteur de recherche favori vous amène qui vous garantissent en plus des viewbots, l'anonymat (pratique pour ne pas se faire attraper), un usage illimité, un support sans faille et \textit{in fine} un contrat avec Twitch. Évidemment, ces services ne sont pas gratuits et il faut être prêt à dépenser au moins dix euros par mois. De l'autre côté de la grille des tarifs, un site propose une solution performante pour\ldots 155 euros par semaine ! 
 
-Commencer à booster sa chaîne avec des view bots est facile. Une recherche sur votre moteur de recherche favori vous amène qui vous garantissent en plus des view bots, l'anonymat (pratique pour ne pas se faire attraper), un usage illimité, un support sans faille et \textit{in fine} un contrat avec Twitch. Évidemment, ces services ne sont pas gratuits et il faut être prêt à dépenser au moins dix euros par mois. De l'autre côté de la grille des tarifs, un site propose une solution performante pour... 155 euros par semaine ! 
+Techniquement, comment cela se passe ? Les subtilités techniques évoluent en fonction des parades mises en place par Twitch mais le principe de base reste le même. Derrière des proxies et en optimisant les paquets envoyés, les pirates jouent avec le protocole (d'abord le RTMP puis le HLS ou \textit{HTTP Live Streaming}) pour communiquer avec les serveurs et obtenir un \textit{acknowledgement} ou un \textit{token} de Twitch qui montre. 
 
-Évidamment, le viewbotting est interdit sur Twitch (et très mal vu\footnote{On peut citer le cas du Sud-coréen Harry « MaSsan » Cheong. Acculé à cause d'indices laissant paraître un viewbotting, il a essuyé pendant plusieurs mois la colère du chat (des messages du type « BEEP BOOP I'M A HUMAN \includegraphics[width=0.3cm]{MrDestructoid.png} »). Finalement, Twitch a officiellement décidé de le bannir de façon temporaire...sans donner le motif ni préciser la date de fin du bannissement}). S'il est possible de détecter facilement qu'une chaîne est envahie par les robots, Twitch ne peut pas déterminer avec certitude qui est à l'origine de cette vague. En effet, un concurrent pourrait envoyer des robots sur les chaînes rivales puis dénoncer sous un autre nom ces chaînes afin de les faire bannir. C'est pour cette raison que, faute de preuves irréfutables, peu de broadcasters sont bannis\footnote{Voir note précédente.}.
 
-Comment donc repérer qu'un streamer en train de diffuser est en train d'utiliser des robots ? À vrai dire, il n'existe pas de méthode exacte et fiable pour déterminer un viewbotting mais plusieurs heuristiques permettent de se faire une idée assez juste. 
+Un des scripts les plus anciens que j'ai trouvé lors de mes recherches remonte à 2013 %\cprotect{\footnote{Le code source de ce script se trouve à cette adresse : \href{https://gist.github.com/Xeroday/6468146}}{\verb|gist.github.com/Xeroday/6468146|}}.
 
-L'architecture de Twitch est telle que les serveurs du flux vidéo et les serveurs de chat sont distincts. Par défaut, un utilisateur est connecté à un serveur vidéo (pour pouvoir regarder le flux, donc) et un serveur de chat (pour l'interaction avec le broadcaster). Cependant, les premières versions des services de viewbotting proposaient des robots qui se connectaient uniquement le serveur vidéo, ce qui fait gonfler le nombre de spectateurs (le chiffre en dessous du flux vidéo) mais pas le nombre de chatters. 
+\subsection{Mais que fait la police (de Twitch) ?}
 
-Voilà une faille ; si la différence entre le nombre de viewers et le nombre de spectateurs est trop importante, on considère qu'il y a viewbotting. Ce problème a été contourné par les pirates en proposant désormais dans leurs offres des view bots ET des chat bots. Ces chat bots, qui se connectent au serveur de chat, sont cependant peu crédibles. Certes ils sont actifs dans le chat mais un utilisateur humain expérimenté ne se fait pas leurrer. Les messages que les chat bots envoient ne correspondent pas à ce qui se passe sur le flux vidéo () et ils sont envoyés à une fréquence assez faible. On dit alors que le chat est « vide » ou qu'il « sonne creux ».
+Évidamment, le viewbotting est interdit sur Twitch, et très mal vu d'ailleurs\footnote{On peut citer le cas du Sud-coréen Harry « MaSsan » Cheong. Acculé à cause d'indices de plus en plus précis laissant paraître un viewbotting, il a essuyé pendant plusieurs mois les moqueries du chat (des messages du type « BEEP BOOP I'M A HUMAN \includegraphics[width=0.3cm]{MrDestructoid.png} »). Récemment, Twitch a officiellement décidé de le bannir de façon temporaire\ldots sans préciser la date de fin du bannissement.}. S'il est possible de détecter facilement qu'une chaîne est envahie par les robots, Twitch ne peut pas déterminer avec certitude qui est à l'origine de cette vague. En effet, un concurrent pourrait envoyer des robots sur les chaînes rivales puis dénoncer ces chaînes afin de les faire bannir. C'est pour cette raison que peu de broadcasters sont bannis et que le présomption d'innocence est le principe\footnote{Seuls ceux qui manquent cruellement de précaution sont bannis. Le cas typique est celui du streamer affichant par erreur des informations pendant une diffusion (tableau de bord pour la gestion du viewbotting, connecté actuellement sur un site de viewbots, en pleine discussion Skype avec le support d'un de ces sites).}. 
+
+Comment donc Twitch repère la présence de robots sur une chaîne donnée ? À vrai dire, il n'existe pas de méthode exacte et fiable pour déterminer un viewbotting mais plusieurs heuristiques permettent de se faire une idée assez juste. 
+
+L'architecture de Twitch est telle que les serveurs du flux vidéo et les serveurs de chat sont distincts. Par défaut, un utilisateur est connecté à un serveur vidéo (pour pouvoir regarder le flux, donc) et un serveur de chat (pour l'interaction avec le broadcaster). Par exemple, les liens \cprotect{\href{https://player.twitch.tv/?&channel=lille1}}{\verb|player.twitch.tv/?&channel=lille1|} et \cprotect{\href{https://www.twitch.tv/lille1/chat}}{\verb|twitch.tv/lille1/chat|} permettent respectivement d'accéder au flux vidéo et au chat de la chaîne \verb|Lille1|\footnote{Je n'ai pas créé cette chaîne pour la rédaction de ce mémoire (elle existe depuis janvier 2014)\ldots J'aurais bien aimé !}. Cependant, les premières versions des services de viewbotting proposaient des robots qui se connectaient uniquement aux serveurs vidéo, ce qui fait gonfler le nombre de spectateurs (le chiffre en dessous du flux vidéo) mais pas le nombre de chatters. 
+
+Voilà une faille ; si la différence entre le nombre de viewers et le nombre de spectateurs est trop importante, on considère qu'il y a viewbotting. Ce problème a été contourné par les pirates en proposant désormais dans leurs offres des viewbots ET des chatbots. Ces chatbots, qui se connectent au serveur de chat, sont cependant peu crédibles. Certes, ils sont actifs dans le chat mais un utilisateur humain expérimenté ne se fait pas leurrer. Les chats bots envoient des messages à une fréquence faible et ces messages ne correspondent pas à ce qui se passe sur le flux vidéo\footnote{Par exemple, les spectateurs se moquent gentiment du streamer quand ce dernier rate quelque chose ou meurt. Les robots, eux, vont écrire des messages aléatoires venant d'une base de données. Une piste pour les pirates : on pourrait contrer ce problème en regardant les derniers messages humains envoyés et voir quel est le message robot le plus proche. À ma connaissance, aucune solution de viewbotting ne propose ce mode de fonctionnement.}. On dit souvent des viewbotters que leur chat est « vide » ou qu'il « sonne creux ».
 
 D'autres heuristiques existent pour juger ou non d'un viewbotting :
 \begin{itemize}
@@ -88,13 +86,23 @@ D'autres heuristiques existent pour juger ou non d'un viewbotting :
 \item l'historique de la chaîne (un stream qui rassemble en moyenne 100 spectateurs pendant 6 mois qui passe du jour au lendemain à 20000),
 \item la courbes d'affluence pendant un stream (au fil d'un stream, le nombre de spectateurs augmente petit à petit et non par blocs de 1000).
 \end{itemize}
-Un compte Twitter s'amuse d'ailleurs à inspecter Twitch. Dès qu'un stream est suspect et matche, un tweet est posté avec un nombre approximatif de bots\footnote{https://twitter.com/botdetectorbot}.
+Le compte Twitter \href{https://twitter.com/botdetectorbot}{\texttt{@BotDetectorBot}} s'amuse d'ailleurs à inspecter Twitch. Dès qu'un stream qu'il surveille devient suspect, un tweet est posté avec un nombre approximatif de bots.
 
-Twitch assure qu'il lutte contre le viewbotting mais une communication détaillée sur cette lutte reviendrait à donner aux pirates les moyens de contourner les parades mises en place. 
+Après la détection, l'action. Des employés de Twitch assurent sur le réseaux sociaux que des équipes sont totalement dédiées à la lutte contre le viewbotting. Mais ces employés reconnaissent un manque de communication publique sur ce sujet. Ce silence est compréhensible puisqu'une communication détaillée sur cette lutte mises en place reviendraient à donner aux développeurs de solutions de viewbotting les moyens de contourner les parades mises en place. Les réponses officielles apportées sont que les solutions anti-viewbotting déteriorent petit à petit l'efficacité du viewbotting et qu'en conséquence, les prix pour les streamers souhaitant s'équiper de viewbots ont grimpé significativement. On sent tout de même que sur certains aspects, c'est peine perdue pour Twitch. Bannir des serveur proxy ou des adresses IP ne sert à rien, comme les pirates peuvent toujours trouver un autre serveur ou obtenir une nouvelle adresse\ldots
+
+Des solutions ont été proposés 
+% changer façon de compter
+% changer affichage des top channels
+. 
+
+
 \begin{itemize}
 \item (ils bloquent les proxies)
 \end{itemize}
 
+\section{Webographie}
+
+Évidemment, il n'existe pas de livres sur ce sujet à la fois très contemporain et secret.
 
 \end{document}
 
